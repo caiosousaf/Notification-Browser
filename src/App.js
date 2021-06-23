@@ -12,15 +12,25 @@ const App = {
         })
 
         Emitter.on('countdown-end', () => {
+            const messages = [
+                'Vá e faça Acontecer',
+                 'Tome para si, O que é seu por direito',
+                  'Tudo certo',
+                  'Ir ao mercado',
+                   'Faça alguma coisa',
+                    'Decida',
+                     'Seja alguém'
+            ],
+             randomIndex = Math.floor(Math.random() * messages.length)
             Notifyer.notify({
                 title: "Hora para ser lembrada",
-                body: "Faça o que deve ser feito"
+                body: messages[randomIndex]
               })
             Timer.init();
         })
 
         
-        Timer.init(0.2 * 60)
+        Timer.init(1 * 60)
         
         
     } catch (err) {
